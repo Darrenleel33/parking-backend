@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_110257) do
   end
 
   create_table "prices", force: :cascade do |t|
+    t.integer "initial"
     t.integer "hourly"
     t.integer "wholeDay"
     t.datetime "created_at", precision: 6, null: false
@@ -34,8 +35,9 @@ ActiveRecord::Schema.define(version: 2021_09_04_110257) do
   create_table "tickets", force: :cascade do |t|
     t.integer "car_id"
     t.integer "price_id"
-    t.datetime "Date"
-    t.time "check_in"
+    t.datetime "date"
+    t.integer "hours"
+    t.integer "days"
     t.boolean "paid"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

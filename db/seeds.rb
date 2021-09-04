@@ -12,11 +12,15 @@ require 'faker'
 puts "Clearing old data..."
 Car.destroy_all
 Car.reset_pk_sequence
+Price.destroy_all
+Price.reset_pk_sequence
+Ticket.destroy_all
+Ticket.reset_pk_sequence
 
 
-puts "Seeding users..."
+puts "Printing Cars...zroom"
 
-20.times do
+25.times do
     carmake = Faker::Vehicle.make
     Car.create(
         Owner: Faker::Name.name,
@@ -25,3 +29,40 @@ puts "Seeding users..."
         color: Faker::Vehicle.color
         )
 end
+
+puts "Making prices...$$$"
+
+1.times do
+Price.create(
+    initial:10, 
+    hourly:3,
+    wholeDay:35)
+end
+
+puts "Making Tickets...brr brr"
+
+20.times do
+    Ticket.create(
+        car_id:Car.ids.sample,
+        price_id:Price.ids.sample,
+        date:Faker::Date.between(from: 2.days.ago, to: Date.today),
+        hours: rand(1...7),
+        days: 0,
+        paid:Faker::Boolean.boolean(true_ratio: 0.3)
+    )
+end
+
+5.times do
+    Ticket.create(
+        car_id:Car.ids.sample,
+        price_id:Price.ids.sample,
+        date:Faker::Date.between(from: 2.days.ago, to: Date.today),
+        hours: 0,
+        days: rand(1...7),
+        paid:Faker::Boolean.boolean(true_ratio: 0.3)
+    )
+
+end
+
+
+
