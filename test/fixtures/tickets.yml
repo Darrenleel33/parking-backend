@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  car_id: 1
+  price_id: 1
+  Date: 2021-09-04 07:02:57
+  check_in: 2021-09-04 07:02:57
+  paid: false
+
+two:
+  car_id: 1
+  price_id: 1
+  Date: 2021-09-04 07:02:57
+  check_in: 2021-09-04 07:02:57
+  paid: false
