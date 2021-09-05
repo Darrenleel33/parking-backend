@@ -23,7 +23,7 @@ class TicketsController < ApplicationController
     end
 
     def destroy
-        ticket = Like.find_by(id: params[:id])
+        ticket = Ticket.find_by(id: params[:id])
         if ticket
             ticket.destroy
             render json: "ticket removed"
