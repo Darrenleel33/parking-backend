@@ -1,6 +1,7 @@
 
 import './App.css';
-
+import Home from './Home';
+import Tickets from './Tickets';
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -22,7 +23,7 @@ export default function App() {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <Link to="/tickets">List of Tickets</Link>
             </li>
           </ul>
         </nav>
@@ -33,8 +34,8 @@ export default function App() {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/tickets">
+            <Tickets />
           </Route>
           <Route path="/">
             <Home />
@@ -45,15 +46,10 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function About() {
   return <h2>About</h2>;
 }
 
-function Users() {
-  return <h2>Users</h2>;
-}
+
 
