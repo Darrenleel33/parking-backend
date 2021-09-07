@@ -12,7 +12,7 @@ function Tickets() {
         .then(data => setTickets(data))
       }, [])
 
-     console.log (tickets)
+    console.log (tickets)
     const ticketsArr = tickets.map((ticket) => {
         return <TicketCards
         key={ticket.id}
