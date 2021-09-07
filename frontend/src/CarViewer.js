@@ -1,23 +1,11 @@
 import React from 'react'
 
-function CarCards({cars, toggleEdit, setToggleEdit, handleEdit}) {
-    
 
 
-
-
-
-
-
-
-    function handleDelete(){
-    console.log("delete", cars.id)
-    }
-    
-    
-
+function CarViewer({cars, handleEdit, handleDelete}) {
+   
     return (
-
+        
         <div>
             <h3>Parked Car #{cars.id} </h3>
             <h5>Owner:{cars.Owner}</h5>
@@ -27,7 +15,7 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit}) {
             <button onClick={handleEdit}>Edit Car Details</button>
             <button onClick={handleDelete}>Delete</button>
         </div>
+     
     )
-} 
-
-export default CarCards
+}
+export default CarViewer

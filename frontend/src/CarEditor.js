@@ -1,26 +1,79 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function CarEditor({cars, handleEdit, id, Owner, color, vehicleMake, vehicleModel}) {
- 
-    
-    return (
-        <div>
-            <h3>Editing Mode-Parked Car</h3>
-    <form className="car-editor">
-     <h5>Owner Name:</h5>
-      <input type="text" name="Owner" placeholder="Owner name" value={cars.Owner} />
-      <h5>Color</h5>
-      <input type="text" name="color" placeholder="Color of the Car" value={cars.color}/>
-      <h5>Vehicle Make</h5>
-      <input type="text" name="vehicleMake" placeholder="make" value={cars.vehicleMake}/>
-      <h5>Vehicle Model</h5>
-      <input type="text" name="vehicleModel" placeholder="model" value={cars.vehicleModel}/>
-      <div className="button-row">
-        <input className="button" type="submit" value="Save" />
-        <button type="button" onClick={handleEdit}>Cancel</button>
-      </div>
-    </form>
-        </div>
-    )
+function CarEditor({cars, handleEdit}) {
+ const [id, setId]=useState('')
+ const [Owner, setOwner]=useState('')
+ const [color, setColor]=useState('')
+ const [vehicleMake, setVehicleMake]=useState('')
+ const [vehicleModel, setVehicleModel]=useState('')
+
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    let info = {
+       id:id,
+       Owner:Owner,
+       color:color,
+       vehicleMake: vehicleMake,
+       vehicleModel: vehicleModel
+    }
+    fetch('http://localhost:3000/cars', {
+        method: 'PATCH',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(info)
+    })
+    .then(res => res.json())
+    .then(data => {console.log(data)
+   
+    })
+    // console.log(username)
+    // console.log(password)
+}
+
+return (
+  <form>
+    <input
+      value={id}
+      onChange={e => setId(e.target.value)}
+      placeholder="CarID"
+      type="text"
+      name="Car ID"
+     
+    />
+    <input
+      value={Owner}
+      onChange={e => setOwner(e.target.value)}
+      placeholder="Car Owner"
+      type="text"
+      name="Car Owner"
+     
+    />
+    <input
+      value={color}
+      onChange={e => setColor(e.target.value)}
+      placeholder="color"
+      type="text"
+      name="color"
+  
+    />
+    <input
+      value={vehicleMake}
+      onChange={e => setVehicleMake(e.target.value)}
+      placeholder="VehicleMake"
+      type="text"
+      name="VehicleMake"
+  
+    />
+    <input
+      value={vehicleModel}
+      onChange={e => setVehicleModel(e.target.value)}
+      placeholder="vehicleModel"
+      type="text"
+      name="vehicleModel"
+
+    />
+    <button type="submit" onClick={handleSubmit}>Submit</button>
+  </form>
+);
 }
 export default CarEditor;

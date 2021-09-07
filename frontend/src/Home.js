@@ -13,8 +13,8 @@ function Home() {
 
     function handleEdit(){
         setToggleEdit(!toggleEdit) 
-          
     }
+    
 
     useEffect((e) => {
         fetch('http://localhost:3000/cars')    
@@ -32,7 +32,6 @@ function Home() {
         setToggleEdit={setToggleEdit}
         handleEdit={handleEdit}
         
-
     />
     })
 

@@ -7,7 +7,16 @@ class CarsController < ApplicationController
         car = find_car
         render json: car
     end
-    
+
+    def create
+        cars = Car.create!(car_param)
+           
+            if cars
+                render json: cars
+            else
+                render json: { error: "Unable to create"}, status: :not_found
+            end
+    end
     
     def destroy
         car = find_car
@@ -23,6 +32,9 @@ class CarsController < ApplicationController
 
     def find_car
         Car.find_by(id: params[:id])
+    end
+    def car_param
+        params.permit(:Owner, :vehicleMake, :vehicleModel, :color)
     end
 
 end

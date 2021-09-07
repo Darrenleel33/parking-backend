@@ -1,4 +1,4 @@
 class Ticket < ApplicationRecord
-    belongs_to :cars
-    belongs_to :prices
+    belongs_to :car
+    belongs_to :price
 end

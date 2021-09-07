@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import CarEditor from './CarEditor';
-import CarCards from './CarCards';
 
-function Content({cars, toggleEdit, setToggleEdit, handleEdit, id, Owner, color, vehicleMake, vehicleModel}) {
+import CarViewer from './CarViewer';
+
+function Content({cars, toggleEdit, setToggleEdit, handleEdit, handleDelete, id, Owner, color, vehicleMake, vehicleModel}) {
 
 
 
     const getContent = () => {
-        if (toggleEdit) {
-          return <CarEditor cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit} id={id} Owner={Owner} color={color} vehicleMake={vehicleMake} vehicleModel={vehicleModel}/>;
+        if (toggleEdit===true) {
+          return <CarEditor key={cars.id} cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit} id={id} Owner={Owner} color={color} vehicleMake={vehicleMake} vehicleModel={vehicleModel}/>;
+        } else if (toggleEdit===false) { 
+          return <CarViewer cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit} handleDelete={handleDelete}/>;
         } else { 
-          return <CarCards cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit}/>;
-        }
-    
+          return "nothing"
+        }  
       };
     
       return <div className="master-detail-element detail">{getContent()}</div>;

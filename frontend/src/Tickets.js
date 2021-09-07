@@ -4,26 +4,25 @@ import TicketCards from './TicketCards'
 function Tickets() {
 
     const [tickets, setTickets] = useState([])
+    const [loadingTickets, setLoadingTickets] = useState(true)
 
 
     useEffect((e) => {
         fetch('http://localhost:3000/tickets')    
         .then(resp => resp.json())
-        .then(data => setTickets(data))
+        .then(data => {
+            setTickets(data)
+            setLoadingTickets(false)
+        })
       }, [])
 
-    console.log (tickets)
-    const ticketsArr = tickets.map((ticket) => {
-        return <TicketCards
-        key={ticket.id}
-        {...ticket}
-     
-        />
-    })
+    
 
-    return (
+  
+  
+  return (
         <div>
-            {ticketsArr}
+            tickets
         </div>
     )
 }

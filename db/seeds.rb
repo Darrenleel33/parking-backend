@@ -20,7 +20,7 @@ Ticket.reset_pk_sequence
 
 puts "Printing Cars...zroom"
 
-20.times do
+3.times do
     carmake = Faker::Vehicle.make
     Car.create(
         Owner: Faker::Name.name,

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Board from './components/Board'
 import Card from './components/Card'
+import AddCarForm from './AddCarForm';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <Link to="/addCarForm">Add a New Car into Parking Lot</Link>
             </li>
             <li>
               <Link to="/tickets">List of Tickets</Link>
@@ -37,8 +38,8 @@ function App() {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/addCarForm">
+            <AddCarForm />
           </Route>
           <Route path="/tickets">
             <Tickets/>
@@ -56,9 +57,6 @@ function App() {
 }
 
 
-function About() {
-  return <h2>About</h2>;
-}
 
 
 export default App

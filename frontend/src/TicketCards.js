@@ -1,6 +1,6 @@
-import { Card } from '@material-ui/core'
+
 import React, { useState } from 'react'
-import dateFormat from 'dateformat';
+
 
 function TicketCards({id, tickets, hours, car_id, date, paid, days}) {
 
