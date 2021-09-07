@@ -9,9 +9,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Board from './components/Board'
+import Card from './components/Card'
 
 export default function App() {
   return (
+    <div>
+
     <Router>
       <div>
         <nav>
@@ -43,6 +47,9 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+
+    </div>
+   
   );
 }
 

@@ -1,13 +1,21 @@
+import { Card } from '@material-ui/core'
 import React from 'react'
+import dateFormat from 'dateformat';
 
-function TicketCards() {
+function TicketCards({id, tickets, hours, car_id, date, paid, days}) {
 
+let check = ({paid}=true)? "No" : "Yes"
 
     return (
-     <div className="ticket-card">
-            <div class='ticket-card-body'>
-                <h4>3</h4>
-                <h4>3</h4>
+     <div >
+            <div >
+                <h2>Parking Receipts #{id} </h2>
+
+                <h4>Date:{date}</h4>
+                <h4>Car ID#{car_id}</h4>
+                <h4>Number of {hours} hours parked</h4>
+                <h4>Number of {days} days parked</h4>
+                <h4>Paid:{check}</h4>
                
                 <button >Remove</button>
             </div>
