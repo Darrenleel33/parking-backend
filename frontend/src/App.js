@@ -12,7 +12,9 @@ import {
 import Board from './components/Board'
 import Card from './components/Card'
 
-export default function App() {
+function App() {
+
+  
   return (
     <div>
 
@@ -39,7 +41,7 @@ export default function App() {
             <About />
           </Route>
           <Route path="/tickets">
-            <Tickets />
+            <Tickets/>
           </Route>
           <Route path="/">
             <Home />
@@ -59,4 +61,4 @@ function About() {
 }
 
 
-
+export default App

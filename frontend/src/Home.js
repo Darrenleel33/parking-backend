@@ -3,16 +3,17 @@ import CarCards from './CarCards'
 import CarEditor from './CarEditor'
 import Board from './components/Board'
 import Content from './Content'
+import Sidebar from './Sidebar'
 
 
 function Home() {
 
     const [cars, setCars] = useState([])
-    const [toggleEdit, setToggleEdit] = useState(false)
+    const [toggleEdit,setToggleEdit]=useState(false)
 
-
-    function handleToggle () {
-        setToggleEdit(!toggleEdit)
+    function handleEdit(){
+        setToggleEdit(!toggleEdit) 
+          
     }
 
     useEffect((e) => {
@@ -23,21 +24,22 @@ function Home() {
     
     
     const contentDisplay = cars.map((cars) => {
-        return    <Content 
+        return    <CarCards 
         key={cars.id}
         {...cars}
         cars={cars}
-        handleToggle={handleToggle}
         toggleEdit={toggleEdit}
         setToggleEdit={setToggleEdit}
-      
+        handleEdit={handleEdit}
+        
+
     />
     })
 
     return (
         <div>
-            {contentDisplay}
-           {/* {toggleEdit? <CarEditor cars={cars} setCars={setCars} handleToggle={handleToggle}/>:carsArr} */}
+            <Content cars={cars} handleEdit={handleEdit} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit}/>
+            <Sidebar contentDisplay={contentDisplay}/>
         </div>
     )
 }

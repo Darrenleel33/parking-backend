@@ -1,6 +1,6 @@
 import React from 'react'
 
-function CarEditor({cars, handleToggle, id, Owner, color, vehicleMake, vehicleModel}) {
+function CarEditor({cars, handleEdit, id, Owner, color, vehicleMake, vehicleModel}) {
  
     
     return (
@@ -17,7 +17,7 @@ function CarEditor({cars, handleToggle, id, Owner, color, vehicleMake, vehicleMo
       <input type="text" name="vehicleModel" placeholder="model" value={cars.vehicleModel}/>
       <div className="button-row">
         <input className="button" type="submit" value="Save" />
-        <button type="button" onClick={handleToggle}>Cancel</button>
+        <button type="button" onClick={handleEdit}>Cancel</button>
       </div>
     </form>
         </div>

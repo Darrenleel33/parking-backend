@@ -4,7 +4,6 @@ import dateFormat from 'dateformat';
 
 function TicketCards({id, tickets, hours, car_id, date, paid, days}) {
 
-const [dateCRUD, setDateCRUD]= useState("")
 
 
 

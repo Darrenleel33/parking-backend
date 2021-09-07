@@ -20,7 +20,7 @@ Ticket.reset_pk_sequence
 
 puts "Printing Cars...zroom"
 
-25.times do
+20.times do
     carmake = Faker::Vehicle.make
     Car.create(
         Owner: Faker::Name.name,
@@ -43,23 +43,21 @@ puts "Making Tickets...brr brr"
 
 20.times do
     Ticket.create(
-        car_id:Car.ids.sample,
-        price_id:Price.ids.sample,
-        date:Faker::Date.between(from: 2.days.ago, to: Date.today),
-        hours: rand(1...7),
+        car_id:3,
+        price_id:1,
+        hours:rand(1...7),
         days: 0,
-        paid:Faker::Boolean.boolean(true_ratio: 0.3)
+        paid:true
     )
 end
 
 5.times do
     Ticket.create(
-        car_id:Car.ids.sample,
-        price_id:Price.ids.sample,
-        date:Faker::Date.between(from: 2.days.ago, to: Date.today),
+        car_id:3,
+        price_id:1,
         hours: 0,
         days: rand(1...7),
-        paid:Faker::Boolean.boolean(true_ratio: 0.3)
+        paid:true
     )
 
 end
