@@ -3,4 +3,8 @@ Rails.application.routes.draw do
   resources :cars, only: [:index, :show, :create, :destroy]
   resources :prices, only: [:index]
   resources :tickets, only: [:index, :show, :create, :destroy]
+
+  
+
+
 end

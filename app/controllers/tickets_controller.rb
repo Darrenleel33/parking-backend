@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+   
     def index
         render json: Ticket.all        
     end
@@ -32,10 +33,5 @@ class TicketsController < ApplicationController
         end
     end
 
-    private
-
-    def ticket_params
-        params.permit(:car_id, :price_id, :date, :hours, :days, :paid)
-    end
 
 end

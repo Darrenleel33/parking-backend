@@ -4,7 +4,7 @@ import TicketCards from './TicketCards'
 function Tickets() {
 
     const [tickets, setTickets] = useState([])
-    const [loadingTickets, setLoadingTickets] = useState(true)
+ 
 
 
     useEffect((e) => {
@@ -12,17 +12,22 @@ function Tickets() {
         .then(resp => resp.json())
         .then(data => {
             setTickets(data)
-            setLoadingTickets(false)
         })
       }, [])
 
-    
+      const ticketArray = tickets.map((tickets) => {
+        return  <TicketCards 
+        key={tickets.id}
+        {...tickets}  
+    />
+      })
 
-  
+  console.log(tickets)
   
   return (
         <div>
-            tickets
+            <h3>Parking Receipt Log</h3>
+            {ticketArray}
         </div>
     )
 }

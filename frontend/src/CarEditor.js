@@ -17,7 +17,9 @@ function CarEditor({cars, handleEdit}) {
        vehicleMake: vehicleMake,
        vehicleModel: vehicleModel
     }
-    fetch('http://localhost:3000/cars', {
+    
+
+    fetch(`http://localhost:3000/cars/:${id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(info)

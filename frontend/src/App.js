@@ -30,7 +30,7 @@ function App() {
               <Link to="/addCarForm">Add a New Car into Parking Lot</Link>
             </li>
             <li>
-              <Link to="/tickets">List of Tickets</Link>
+              <Link to="/ticks">List of Tickets</Link>
             </li>
           </ul>
         </nav>
@@ -41,7 +41,7 @@ function App() {
           <Route path="/addCarForm">
             <AddCarForm />
           </Route>
-          <Route path="/tickets">
+          <Route path="/ticks">
             <Tickets/>
           </Route>
           <Route path="/">

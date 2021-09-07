@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function CarCards({cars, toggleEdit, setToggleEdit, handleEdit}) {
     
@@ -12,6 +12,11 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit}) {
 
     function handleDelete(){
     console.log("delete", cars.id)
+    const id = cars.id
+        fetch(`http://localhost:3000/cars/${id}`, {
+         method: "DELETE",
+            })
+    
     }
     
     

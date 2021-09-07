@@ -2,32 +2,35 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router'
 
  function AddCarForm() {
-    const [id, setId]=useState('')
+    
     const [Owner, setOwner]=useState('')
     const [color, setColor]=useState('')
     const [vehicleMake, setVehicleMake]=useState('')
     const [vehicleModel, setVehicleModel]=useState('')
    
+    const newCarInfo = {
+       Owner:Owner,
+       color:color,
+       vehicleMake: vehicleMake,
+       vehicleModel: vehicleModel
+    }
    
      function handleSubmit(e) {
        e.preventDefault()
-       let info = {
-          Owner:Owner,
-          color:color,
-          vehicleMake: vehicleMake,
-          vehicleModel: vehicleModel
-       }
        fetch('http://localhost:3000/cars', {
            method: 'POST',
            headers: {'Content-Type': 'application/json'},
-           body: JSON.stringify(info)
+           body: JSON.stringify(newCarInfo)
        })
        .then(res => res.json())
-       .then(data => {console.log(data)
-      
-       })
-   }
+       .then(data => {console.log(data)})
+ 
+       
+      }
    
+
+
+
    return (
      <form>
          <h3> Add a Car to the Parking Lot </h3>
@@ -37,7 +40,7 @@ import { useHistory } from 'react-router'
          placeholder="Car Owner"
          type="text"
          name="Car Owner"
-        
+        required
        />
        <input
          value={color}
@@ -45,7 +48,7 @@ import { useHistory } from 'react-router'
          placeholder="color"
          type="text"
          name="color"
-     
+        required
        />
        <input
          value={vehicleMake}
@@ -53,7 +56,7 @@ import { useHistory } from 'react-router'
          placeholder="VehicleMake"
          type="text"
          name="VehicleMake"
-     
+        required
        />
        <input
          value={vehicleModel}
@@ -61,7 +64,7 @@ import { useHistory } from 'react-router'
          placeholder="vehicleModel"
          type="text"
          name="vehicleModel"
-   
+        
        />
        <button type="submit" onClick={handleSubmit}>Submit</button>
      </form>

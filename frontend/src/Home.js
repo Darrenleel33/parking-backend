@@ -16,12 +16,13 @@ function Home() {
     }
     
 
+
     useEffect((e) => {
         fetch('http://localhost:3000/cars')    
         .then(resp => resp.json())
         .then(data => setCars(data))
       }, [])
-    
+
     
     const contentDisplay = cars.map((cars) => {
         return    <CarCards 
@@ -34,6 +35,8 @@ function Home() {
         
     />
     })
+
+
 
     return (
         <div>

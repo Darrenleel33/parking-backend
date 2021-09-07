@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_110257) do
   create_table "tickets", force: :cascade do |t|
     t.integer "car_id"
     t.integer "price_id"
+    t.date "date"
     t.integer "hours"
     t.integer "days"
     t.boolean "paid"
