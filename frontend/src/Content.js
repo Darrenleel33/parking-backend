@@ -3,15 +3,32 @@ import CarEditor from './CarEditor';
 
 import CarViewer from './CarViewer';
 
-function Content({cars, toggleEdit, setToggleEdit, handleEdit, handleDelete, id, Owner, color, vehicleMake, vehicleModel}) {
+function Content({cars, setCar,toggleEdit, setToggleEdit, handleEdit, handleDelete, displayCar}) {
 
 
 
     const getContent = () => {
         if (toggleEdit===true) {
-          return <CarEditor key={cars.id} cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit} id={id} Owner={Owner} color={color} vehicleMake={vehicleMake} vehicleModel={vehicleModel}/>;
+          return <CarEditor 
+                    key={cars.id} 
+                    setCar={setCar} 
+                    cars={cars} 
+                    toggleEdit={toggleEdit} 
+                    setToggleEdit={setToggleEdit} 
+                    handleEdit={handleEdit} 
+                    displayCar={displayCar}
+                   
+                  />;
         } else if (toggleEdit===false) { 
-          return <CarViewer cars={cars} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} handleEdit={handleEdit} handleDelete={handleDelete}/>;
+          return <CarViewer 
+                    cars={cars} 
+                    toggleEdit={toggleEdit} 
+                    setToggleEdit={setToggleEdit} 
+                    handleEdit={handleEdit} 
+                    handleDelete={handleDelete}
+                    displayCar={displayCar}
+
+                    />;
         } else { 
           return "nothing"
         }  

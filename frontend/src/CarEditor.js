@@ -1,47 +1,44 @@
 import React, { useState } from 'react'
 
-function CarEditor({cars, handleEdit}) {
- const [id, setId]=useState('')
- const [Owner, setOwner]=useState('')
- const [color, setColor]=useState('')
- const [vehicleMake, setVehicleMake]=useState('')
- const [vehicleModel, setVehicleModel]=useState('')
+function CarEditor({cars, setCar, handleEdit, displayCar }) {
+ const [id, setId]=useState(displayCar.id)
+ const [Owner, setOwner]=useState(displayCar.Owner)
+ const [color, setColor]=useState(displayCar.color)
+ const [vehicleMake, setVehicleMake]=useState(displayCar.vehicleMake)
+ const [vehicleModel, setVehicleModel]=useState(displayCar.vehicleModel)
 
 
   function handleSubmit(e) {
     e.preventDefault()
     let info = {
-       id:id,
+       car_id:id,
        Owner:Owner,
        color:color,
        vehicleMake: vehicleMake,
        vehicleModel: vehicleModel
     }
     
-
-    fetch(`http://localhost:3000/cars/:${id}`, {
+    
+    fetch(`http://localhost:3000/cars/${id}`, {
         method: 'PATCH',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(info)
     })
     .then(res => res.json())
     .then(data => {console.log(data)
+    
    
     })
     // console.log(username)
     // console.log(password)
 }
 
+
+
+
 return (
   <form>
-    <input
-      value={id}
-      onChange={e => setId(e.target.value)}
-      placeholder="CarID"
-      type="text"
-      name="Car ID"
-     
-    />
+
     <input
       value={Owner}
       onChange={e => setOwner(e.target.value)}
@@ -50,6 +47,7 @@ return (
       name="Car Owner"
      
     />
+
     <input
       value={color}
       onChange={e => setColor(e.target.value)}

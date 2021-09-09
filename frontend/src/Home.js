@@ -10,11 +10,21 @@ function Home() {
 
     const [cars, setCars] = useState([])
     const [toggleEdit,setToggleEdit]=useState(false)
+    const [displayCar,setDisplayCar]=useState({})
+
+  
+
 
     function handleEdit(){
-        setToggleEdit(!toggleEdit) 
+        setToggleEdit(!toggleEdit);
     }
     
+
+    function handleDisplay(id){
+        const findCar = cars.find(cars => cars.id === id)
+        setDisplayCar(findCar);
+        console.log("home displaycar",displayCar)
+       }
 
 
     useEffect((e) => {
@@ -25,23 +35,40 @@ function Home() {
 
     
     const contentDisplay = cars.map((cars) => {
-        return    <CarCards 
+        return   <CarCards 
         key={cars.id}
         {...cars}
         cars={cars}
         toggleEdit={toggleEdit}
         setToggleEdit={setToggleEdit}
         handleEdit={handleEdit}
+        handleDisplay={handleDisplay}
+        
+
         
     />
+    
     })
 
+    
 
 
     return (
         <div>
-            <Content cars={cars} handleEdit={handleEdit} toggleEdit={toggleEdit} setToggleEdit={setToggleEdit}/>
-            <Sidebar contentDisplay={contentDisplay}/>
+            <Content 
+                contentDisplay={contentDisplay} 
+                cars={cars} 
+                setCars={setCars} 
+                handleEdit={handleEdit} 
+                toggleEdit={toggleEdit} 
+                setToggleEdit={setToggleEdit}
+                displayCar={displayCar}
+
+                />
+            <Sidebar 
+                contentDisplay={contentDisplay}
+                handleDisplay={handleDisplay}
+                />
         </div>
     )
 }

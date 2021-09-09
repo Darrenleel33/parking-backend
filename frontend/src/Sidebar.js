@@ -4,7 +4,7 @@ function Sidebar({contentDisplay}) {
 
 
     return (
-        <div>
+        <div >
             {contentDisplay}
         </div>
     )

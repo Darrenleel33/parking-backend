@@ -12,6 +12,7 @@ import {
 import Board from './components/Board'
 import Card from './components/Card'
 import AddCarForm from './AddCarForm';
+import Statistic from './Statistic';
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
             <li>
               <Link to="/ticks">List of Tickets</Link>
             </li>
+            <li>
+              <Link to="/stats">Statistic</Link>
+            </li>
           </ul>
         </nav>
 
@@ -43,6 +47,9 @@ function App() {
           </Route>
           <Route path="/ticks">
             <Tickets/>
+          </Route>
+          <Route path="/stats">
+            <Statistic/>
           </Route>
           <Route path="/">
             <Home />

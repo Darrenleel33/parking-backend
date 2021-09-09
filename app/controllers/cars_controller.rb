@@ -17,6 +17,15 @@ class CarsController < ApplicationController
                 render json: { error: "Unable to create"}, status: :not_found
             end
     end
+    def update
+        car = Car.find_by(id: params[:id])
+        if car
+          car.update(car_param)
+          render json: car
+        else
+          render json: { error: "Car not found" }, status: :not_found
+        end
+      end
     
     def destroy
         car = find_car
