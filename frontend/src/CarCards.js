@@ -3,9 +3,12 @@ import CarEditor from './CarEditor'
 import CarViewer from './CarViewer'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import Fade from 'react-bootstrap/Fade';
 
-function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay }) {
+function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay, updateCarArray }) {
     
+    const [open, setOpen] = useState(false);
+
     function handleDisplayClick(){
         handleDisplay(cars.id)
         console.log ("carcard", cars.id)
@@ -20,22 +23,27 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay })
         fetch(`http://localhost:3000/cars/${id}`, {
          method: "DELETE",
             })
-    
+        
+        
     }
     
 
 
     return (
-        <Card border="dark" style={{ width: '18rem' }} onClick={handleDisplayClick}>
-        <Card.Header>Header</Card.Header>
+        <Card border="dark" style={{ width: '18rem'}} onClick={handleDisplayClick}>
+        <Card.Header>Parked car </Card.Header>
         <Card.Body>
+            
           <Card.Title>Owner: {cars.Owner}</Card.Title>
           <Card.Text>Color: {cars.color}</Card.Text>
           <Card.Text>Vehicle Make: {cars.vehicleMake}</Card.Text>
           <Card.Text>Vehicle Model: {cars.vehicleModel}</Card.Text>
-        <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Car Details</Button>
+           
+        <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Details</Button>
+        &nbsp;&nbsp;
         <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete</Button>
-        <Button variant="outline-primary" size="sm">Info</Button>
+        &nbsp;&nbsp;
+        <Button variant="outline-primary" size="sm">ticket Info</Button>
         </Card.Body>
       </Card>
         // <ul >

@@ -19,7 +19,9 @@ function CarViewer({cars, handleEdit, handleDelete, id, displayCar}) {
             <h5>Vehicle Make:{displayCar.vehicleMake}</h5>
             <h5>Vehicle Model:{displayCar.vehicleModel}</h5>
             <Button variant="outline-success" type="submit" onClick={handleEdit}>Edit Car Details</Button>
+            &nbsp;&nbsp;
             <Button variant="outline-danger" onClick={handleDelete}>Delete</Button>
+            &nbsp;&nbsp;
             <Button variant="outline-primary" >Info</Button>
         </div>
      

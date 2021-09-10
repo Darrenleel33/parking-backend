@@ -4,6 +4,9 @@ import CarEditor from './CarEditor'
 import Board from './components/Board'
 import Content from './Content'
 import Sidebar from './Sidebar'
+import Row from 'react-bootstrap/Row';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
 
 
 function Home() {
@@ -33,6 +36,12 @@ function Home() {
         .then(data => setCars(data))
       }, [])
 
+
+//immediately update when delete/edit activates
+    // function updateCarArray(){
+    //     const updateArray= [...cars]
+    //     setCars(updateArray)
+    // }
     
     const contentDisplay = cars.map((cars) => {
         return   <CarCards 
@@ -43,6 +52,7 @@ function Home() {
         setToggleEdit={setToggleEdit}
         handleEdit={handleEdit}
         handleDisplay={handleDisplay}
+
         
 
         
@@ -54,7 +64,17 @@ function Home() {
 
 
     return (
-        <div>
+        <Container fluid="md">
+        
+    <Row>
+        <Col >
+            <Sidebar 
+                contentDisplay={contentDisplay}
+                handleDisplay={handleDisplay}
+             
+                />
+        </Col>
+        <Col xs={8} md={8}>
             <Content 
                 contentDisplay={contentDisplay} 
                 cars={cars} 
@@ -63,13 +83,13 @@ function Home() {
                 toggleEdit={toggleEdit} 
                 setToggleEdit={setToggleEdit}
                 displayCar={displayCar}
-
+                
+                
                 />
-            <Sidebar 
-                contentDisplay={contentDisplay}
-                handleDisplay={handleDisplay}
-                />
-        </div>
+        </Col>
+    </Row>  
+        
+      </Container>
     )
 }
 export default Home;

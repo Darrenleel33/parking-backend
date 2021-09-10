@@ -29,7 +29,7 @@ function Content({cars, setCar,toggleEdit, setToggleEdit, handleEdit, handleDele
                     displayCar={displayCar}
 
                     />;
-        } else { 
+        } else if (toggleEdit===null){ 
           return "nothing"
         }  
       };
