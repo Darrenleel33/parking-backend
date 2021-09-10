@@ -25,7 +25,7 @@ import { useHistory } from 'react-router'
        .then(res => res.json())
        .then(data => {console.log(data)})
  
-       
+       alert('A car was added')
       }
    
 

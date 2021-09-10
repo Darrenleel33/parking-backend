@@ -13,30 +13,34 @@ import Board from './components/Board'
 import Card from './components/Card'
 import AddCarForm from './AddCarForm';
 import Statistic from './Statistic';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
 function App() {
-
+ 
+  const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: 'blue'
+  };
   
   return (
     <div>
-
+ 
     <Router>
       <div>
         <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/addCarForm">Add a New Car into Parking Lot</Link>
-            </li>
-            <li>
-              <Link to="/ticks">List of Tickets</Link>
-            </li>
-            <li>
-              <Link to="/stats">Statistic</Link>
-            </li>
-          </ul>
+       
+            
+              <Link style={linkStyle} to="/">Home</Link>
+            
+            
+              <Link style={linkStyle} to="/addCarForm">Add a New Car into Parking Lot</Link>
+          
+              <Link style={linkStyle} to="/ticks">List of Tickets</Link>
+           
+              <Link style={linkStyle} to="/stats">Statistic</Link>
+            
+        
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and

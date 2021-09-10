@@ -1,6 +1,8 @@
 import React, { useEffect , useState } from 'react'
 import CarEditor from './CarEditor'
 import CarViewer from './CarViewer'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay }) {
     
@@ -24,17 +26,27 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay })
 
 
     return (
+        <Card border="dark" style={{ width: '18rem' }} onClick={handleDisplayClick}>
+        <Card.Header>Header</Card.Header>
+        <Card.Body>
+          <Card.Title>Owner: {cars.Owner}</Card.Title>
+          <Card.Text>Color: {cars.color}</Card.Text>
+          <Card.Text>Vehicle Make: {cars.vehicleMake}</Card.Text>
+          <Card.Text>Vehicle Model: {cars.vehicleModel}</Card.Text>
+        <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Car Details</Button>
+        <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete</Button>
+        <Button variant="outline-primary" size="sm">Info</Button>
+        </Card.Body>
+      </Card>
+        // <ul >
+        //     <h2></h2>
+        //     <h5>Owner:{cars.Owner}</h5>
+        //     <h5>Color:{cars.color}</h5>
+        //     <h5>Vehicle Make:{cars.vehicleMake}</h5>
+        //     <h5>Vehicle Model:{cars.vehicleModel}</h5>
+           
 
-        <ul onClick={handleDisplayClick}>
-            <h3>Parked Car #{cars.id} </h3>
-            <h5>Owner:{cars.Owner}</h5>
-            <h5>Color:{cars.color}</h5>
-            <h5>Vehicle Make:{cars.vehicleMake}</h5>
-            <h5>Vehicle Model:{cars.vehicleModel}</h5>
-            <button type="submit" onClick={handleEdit}>Edit Car Details</button>
-            <button onClick={handleDelete}>Delete</button>
-
-        </ul>
+        // </ul>
     )
 } 
 
