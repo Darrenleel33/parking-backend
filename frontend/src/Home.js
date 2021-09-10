@@ -64,7 +64,9 @@ function Home() {
 
 
     return (
+
         <Container fluid="md">
+            
         
     <Row>
         <Col >
