@@ -44,53 +44,10 @@ function CarEditor({cars, setCar, handleEdit, displayCar }) {
 
 
 return (
-  // <form>
-
-  //   <input
-  //     value={Owner}
-  //     onChange={e => setOwner(e.target.value)}
-  //     placeholder="Car Owner"
-  //     type="text"
-  //     name="Car Owner"
-     
-  //   />
-
-  //   <input
-  //     value={licensePlate}
-  //     onChange={e => setLicensePlate(e.target.value)}
-  //     placeholder="License Plate"
-  //     type="text"
-  //     name="License Plate"
   
-  //   />
-
-  //   <input
-  //     value={color}
-  //     onChange={e => setColor(e.target.value)}
-  //     placeholder="color"
-  //     type="text"
-  //     name="color"
-  
-  //   />
-  //   <input
-  //     value={vehicleMake}
-  //     onChange={e => setVehicleMake(e.target.value)}
-  //     placeholder="VehicleMake"
-  //     type="text"
-  //     name="VehicleMake"
-  
-  //   />
-  //   <input
-  //     value={vehicleModel}
-  //     onChange={e => setVehicleModel(e.target.value)}
-  //     placeholder="vehicleModel"
-  //     type="text"
-  //     name="vehicleModel"
-
-  //   />
-  //   <button type="submit" onClick={handleSubmit}>Submit</button>
-  // </form>
 <div>
+  <br></br>
+  <br></br>
 <Form>
 
 
