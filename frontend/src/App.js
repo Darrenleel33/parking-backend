@@ -2,7 +2,7 @@
 import './App.css';
 import Home from './Home';
 import Tickets from './Tickets';
-import React from "react";
+import React, {useState} from "react";
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +15,7 @@ import AddCarForm from './AddCarForm';
 import Statistic from './Statistic';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
+
 function App() {
  
   const linkStyle = {
@@ -33,10 +34,9 @@ function App() {
             
               <Link style={linkStyle} to="/">Home</Link>
             
-            
               <Link style={linkStyle} to="/addCarForm">Add a New Car into Parking Lot</Link>
           
-              <Link style={linkStyle} to="/ticks">List of Tickets</Link>
+              <Link style={linkStyle} to="/tickets">List of Tickets</Link>
            
               <Link style={linkStyle} to="/stats">Statistic</Link>
             
@@ -49,7 +49,7 @@ function App() {
           <Route path="/addCarForm">
             <AddCarForm />
           </Route>
-          <Route path="/ticks">
+          <Route path="/tickets">
             <Tickets/>
           </Route>
           <Route path="/stats">

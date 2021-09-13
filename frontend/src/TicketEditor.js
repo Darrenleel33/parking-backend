@@ -1,6 +1,6 @@
 import React from 'react'
 
-function TicketEditor() {
+function TicketEditor(tickets, date, hours, car_id, paid, days) {
     return (
         <div>
            

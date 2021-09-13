@@ -25,8 +25,8 @@ function Content({cars, setCar,toggleEdit, setToggleEdit, handleEdit, handleDele
                     toggleEdit={toggleEdit} 
                     setToggleEdit={setToggleEdit} 
                     handleEdit={handleEdit} 
-                    handleDelete={handleDelete}
                     displayCar={displayCar}
+                   
 
                     />;
         } else if (toggleEdit===null){ 

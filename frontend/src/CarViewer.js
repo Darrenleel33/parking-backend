@@ -1,28 +1,50 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
-
+import Card from 'react-bootstrap/Card';
 
 
 function CarViewer({cars, handleEdit, handleDelete, id, displayCar}) {
    
 
-//function to fetch id car from rails db
+
+function handleDelete(){
+    console.log("delete", cars.id)
+    const id = displayCar.id
+
+    fetch(`http://localhost:3000/cars/${id}`, {
+     method: "DELETE",
+    })
+    window.location.reload(false);  
+  
+}
+
+
+
+
+
+
 
 
     return (
         
         <div>
-            <h1>CURRENTLY DISPLAYING</h1>
-            {/* <h3>Parked Car #{id} </h3> */}
-            <h5>Owner:{displayCar.Owner}</h5>
-            <h5>Color:{displayCar.color}</h5>
-            <h5>Vehicle Make:{displayCar.vehicleMake}</h5>
-            <h5>Vehicle Model:{displayCar.vehicleModel}</h5>
-            <Button variant="outline-success" type="submit" onClick={handleEdit}>Edit Car Details</Button>
-            &nbsp;&nbsp;
-            <Button variant="outline-danger" onClick={handleDelete}>Delete</Button>
-            &nbsp;&nbsp;
-            <Button variant="outline-primary" >Info</Button>
+
+        <Card border="dark" style={{ width: '18rem'}} >
+        <Card.Header>Parked car {displayCar.id} </Card.Header>
+        <Card.Body>
+            
+          <Card.Title>Owner: {displayCar.Owner}</Card.Title>
+          <Card.Text>Color: {displayCar.color}</Card.Text>
+          <Card.Text>Vehicle Make: {displayCar.vehicleMake}</Card.Text>
+          <Card.Text>Vehicle Model: {displayCar.vehicleModel}</Card.Text>
+           
+        <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Details</Button>
+        &nbsp;&nbsp;
+        <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete</Button>
+        &nbsp;&nbsp;
+        <Button variant="outline-primary" size="sm">ticket Info</Button>
+        </Card.Body>
+      </Card>
         </div>
      
     )

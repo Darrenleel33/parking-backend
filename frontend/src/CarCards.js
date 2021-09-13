@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Fade from 'react-bootstrap/Fade';
 
-function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay, updateCarArray }) {
+function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay }) {
     
     const [open, setOpen] = useState(false);
 
@@ -22,18 +22,21 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay, u
     
         fetch(`http://localhost:3000/cars/${id}`, {
          method: "DELETE",
-            })
-        
-        
+        })
+        window.location.reload(false);  
+      
     }
     
-
+   
 
     return (
+      <div>
+  &nbsp;&nbsp;
         <Card border="dark" style={{ width: '18rem'}} onClick={handleDisplayClick}>
         <Card.Header>Parked car </Card.Header>
         <Card.Body>
             
+          <Card.Title>License Plate: {cars.licensePlate}</Card.Title>
           <Card.Title>Owner: {cars.Owner}</Card.Title>
           <Card.Text>Color: {cars.color}</Card.Text>
           <Card.Text>Vehicle Make: {cars.vehicleMake}</Card.Text>
@@ -46,6 +49,8 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay, u
         <Button variant="outline-primary" size="sm">ticket Info</Button>
         </Card.Body>
       </Card>
+    
+      </div>
         // <ul >
         //     <h2></h2>
         //     <h5>Owner:{cars.Owner}</h5>

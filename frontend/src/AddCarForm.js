@@ -11,6 +11,7 @@ function AddCarForm() {
     
     const [Owner, setOwner]=useState('')
     const [color, setColor]=useState('')
+    const [licensePlate, setlicensePlate]=useState('')
     const [vehicleMake, setVehicleMake]=useState('')
     const [vehicleModel, setVehicleModel]=useState('')
     const [showAdd, setShowAdd]=useState(false)
@@ -19,6 +20,7 @@ function AddCarForm() {
 
     const newCarInfo = {
        Owner:Owner,
+       licensePlate:licensePlate,
        color:color,
        vehicleMake: vehicleMake,
        vehicleModel: vehicleModel
@@ -53,42 +55,6 @@ function AddCarForm() {
 
 <h3> Add a Car to the Parking Lot </h3>
      
-     {/* <form>
-       <input
-         value={Owner}
-         onChange={e => setOwner(e.target.value)}
-         placeholder="Car Owner"
-         type="text"
-         name="Car Owner"
-         required
-         />
-       <input
-         value={color}
-         onChange={e => setColor(e.target.value)}
-         placeholder="color"
-         type="text"
-         name="color"
-         required
-         />
-       <input
-         value={vehicleMake}
-         onChange={e => setVehicleMake(e.target.value)}
-         placeholder="VehicleMake"
-         type="text"
-         name="VehicleMake"
-         required
-         />
-       <input
-         value={vehicleModel}
-         onChange={e => setVehicleModel(e.target.value)}
-         placeholder="vehicleModel"
-         type="text"
-         name="vehicleModel"
-         
-         />
-       <button type="submit" onClick={handleSubmit}>Submit</button>
-     </form> */}
-
 
      <Form>
 
@@ -103,6 +69,20 @@ function AddCarForm() {
          name="Car Owner"
          required
         />
+    </Col>
+  </Form.Group>
+
+  <Form.Group as={Row} className="mb-3" controlId="formHorizontalLicensePlate">
+    <Form.Label column sm={2} >License Plate</Form.Label>
+    <Col sm={3}>
+      <Form.Control 
+       value={licensePlate}
+       onChange={e => setlicensePlate(e.target.value)}
+       placeholder="License Plate"
+       type="text"
+       name="License Plate"
+       required
+       />
     </Col>
   </Form.Group>
 

@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_09_04_110257) do
 
   create_table "cars", force: :cascade do |t|
     t.string "Owner"
+    t.string "licensePlate"
     t.string "vehicleMake"
     t.string "vehicleModel"
     t.string "color"

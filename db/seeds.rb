@@ -24,6 +24,7 @@ puts "Printing Cars...zroom"
     carmake = Faker::Vehicle.make
     Car.create(
         Owner: Faker::Name.name,
+        licensePlate: Faker::Vehicle.license_plate,
         vehicleMake: carmake,
         vehicleModel: Faker::Vehicle.model(make_of_model:carmake),
         color: Faker::Vehicle.color

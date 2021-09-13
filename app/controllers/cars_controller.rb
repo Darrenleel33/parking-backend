@@ -43,7 +43,7 @@ class CarsController < ApplicationController
         Car.find_by(id: params[:id])
     end
     def car_param
-        params.permit(:Owner, :vehicleMake, :vehicleModel, :color)
+        params.permit(:Owner, :licensePlate, :vehicleMake, :vehicleModel, :color)
     end
 
 end

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import TicketCards from './TicketCards'
+import TicketEditor from './TicketEditor'
 
 function Tickets() {
 
@@ -22,7 +23,6 @@ function Tickets() {
     />
       })
 
-  console.log(tickets)
   
   return (
         <div>

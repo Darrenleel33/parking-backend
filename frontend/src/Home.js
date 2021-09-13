@@ -21,7 +21,7 @@ function Home() {
     function handleEdit(){
         setToggleEdit(!toggleEdit);
     }
-    
+
 
     function handleDisplay(id){
         const findCar = cars.find(cars => cars.id === id)
@@ -29,7 +29,7 @@ function Home() {
         console.log("home displaycar",displayCar)
        }
 
-
+   
     useEffect((e) => {
         fetch('http://localhost:3000/cars')    
         .then(resp => resp.json())
@@ -37,12 +37,7 @@ function Home() {
       }, [])
 
 
-//immediately update when delete/edit activates
-    // function updateCarArray(){
-    //     const updateArray= [...cars]
-    //     setCars(updateArray)
-    // }
-    
+      console.log(cars)
     const contentDisplay = cars.map((cars) => {
         return   <CarCards 
         key={cars.id}
@@ -52,6 +47,8 @@ function Home() {
         setToggleEdit={setToggleEdit}
         handleEdit={handleEdit}
         handleDisplay={handleDisplay}
+     
+       
 
         
 
@@ -65,10 +62,13 @@ function Home() {
 
     return (
 
+        
         <Container fluid="md">
-            
+        
+        
         
     <Row>
+        
         <Col >
             <Sidebar 
                 contentDisplay={contentDisplay}
@@ -76,6 +76,7 @@ function Home() {
              
                 />
         </Col>
+    
         <Col xs={8} md={8}>
             <Content 
                 contentDisplay={contentDisplay} 
@@ -85,6 +86,7 @@ function Home() {
                 toggleEdit={toggleEdit} 
                 setToggleEdit={setToggleEdit}
                 displayCar={displayCar}
+              
                 
                 
                 />
