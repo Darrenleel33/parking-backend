@@ -9,7 +9,7 @@ function Tickets() {
 
 
     useEffect((e) => {
-        fetch('http://localhost:3000/tickets')    
+        fetch(' /tickets')    
         .then(resp => resp.json())
         .then(data => {
             setTickets(data)

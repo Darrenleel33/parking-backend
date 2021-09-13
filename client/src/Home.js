@@ -32,7 +32,7 @@ function Home() {
 
    
     useEffect((e) => {
-        fetch('http://localhost:3000/cars')    
+        fetch(' /cars')    
         .then(resp => resp.json())
         .then(data => setCars(data))
       }, [])

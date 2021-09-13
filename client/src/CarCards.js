@@ -20,7 +20,7 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay })
         console.log("delete", cars.id)
         const id = cars.id
     
-        fetch(`http://localhost:3000/cars/${id}`, {
+        fetch(` /cars/${id}`, {
          method: "DELETE",
         })
         window.location.reload(false);  

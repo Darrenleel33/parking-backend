@@ -11,7 +11,7 @@ function handleDelete(){
     console.log("delete", cars.id)
     const id = displayCar.id
 
-    fetch(`http://localhost:3000/cars/${id}`, {
+    fetch(` /cars/${id}`, {
      method: "DELETE",
     })
     window.location.reload(false);  
