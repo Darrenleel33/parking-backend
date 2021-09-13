@@ -14,31 +14,40 @@ import Card from './components/Card'
 import AddCarForm from './AddCarForm';
 import Statistic from './Statistic';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 
 function App() {
  
   const linkStyle = {
     margin: "1rem",
     textDecoration: "none",
-    color: 'blue'
+    color: 'white',
+    fontsize: "large"
   };
   
   return (
     <div>
+   
  
+  
+
     <Router>
       <div>
         <nav>
        
+      <Navbar bg="primary" variant="dark">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <Navbar.Brand >Flatiron Parking</Navbar.Brand>
             
               <Link style={linkStyle} to="/">Home</Link>
             
-              <Link style={linkStyle} to="/addCarForm">Add a New Car into Parking Lot</Link>
+              <Link style={linkStyle} to="/addCarForm">Add a New Car</Link>
           
               <Link style={linkStyle} to="/tickets">List of Tickets</Link>
            
               <Link style={linkStyle} to="/stats">Statistic</Link>
+     </Navbar>
             
         
         </nav>

@@ -14,7 +14,7 @@ function AddCarForm() {
     const [licensePlate, setlicensePlate]=useState('')
     const [vehicleMake, setVehicleMake]=useState('')
     const [vehicleModel, setVehicleModel]=useState('')
-    const [showAdd, setShowAdd]=useState(false)
+    const [showAdd, setShowAdd]=useState(null)
     
    
 

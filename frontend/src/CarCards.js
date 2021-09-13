@@ -42,8 +42,7 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay })
           <Card.Text>Vehicle Make: {cars.vehicleMake}</Card.Text>
           <Card.Text>Vehicle Model: {cars.vehicleModel}</Card.Text>
            
-        <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Details</Button>
-        &nbsp;&nbsp;
+      
         <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete</Button>
         &nbsp;&nbsp;
         <Button variant="outline-primary" size="sm">ticket Info</Button>
@@ -51,15 +50,7 @@ function CarCards({cars, toggleEdit, setToggleEdit, handleEdit, handleDisplay })
       </Card>
     
       </div>
-        // <ul >
-        //     <h2></h2>
-        //     <h5>Owner:{cars.Owner}</h5>
-        //     <h5>Color:{cars.color}</h5>
-        //     <h5>Vehicle Make:{cars.vehicleMake}</h5>
-        //     <h5>Vehicle Model:{cars.vehicleModel}</h5>
-           
-
-        // </ul>
+ 
     )
 } 
 

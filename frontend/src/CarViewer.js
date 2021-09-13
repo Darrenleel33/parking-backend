@@ -28,11 +28,12 @@ function handleDelete(){
     return (
         
         <div>
-
-        <Card border="dark" style={{ width: '18rem'}} >
-        <Card.Header>Parked car {displayCar.id} </Card.Header>
+        &nbsp;&nbsp;
+        <Card border="dark" style={{ width: '20rem'}} >
+        <Card.Header>Current Car </Card.Header>
         <Card.Body>
             
+          <Card.Title>License Plate: {displayCar.licensePlate}</Card.Title>
           <Card.Title>Owner: {displayCar.Owner}</Card.Title>
           <Card.Text>Color: {displayCar.color}</Card.Text>
           <Card.Text>Vehicle Make: {displayCar.vehicleMake}</Card.Text>
@@ -40,7 +41,7 @@ function handleDelete(){
            
         <Button variant="outline-success" size="sm" type="submit" onClick={handleEdit}>Edit Details</Button>
         &nbsp;&nbsp;
-        <Button variant="outline-danger" size="sm" onClick={handleDelete}>Delete</Button>
+        <Button variant="outline-danger" size="sm" onClick={handleDelete}>Remove Car</Button>
         &nbsp;&nbsp;
         <Button variant="outline-primary" size="sm">ticket Info</Button>
         </Card.Body>

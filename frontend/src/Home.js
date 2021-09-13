@@ -19,13 +19,14 @@ function Home() {
 
 
     function handleEdit(){
-        setToggleEdit(!toggleEdit);
+        setToggleEdit(toggleEdit===false);
     }
 
 
     function handleDisplay(id){
         const findCar = cars.find(cars => cars.id === id)
         setDisplayCar(findCar);
+        setToggleEdit(toggleEdit===true);
         console.log("home displaycar",displayCar)
        }
 
